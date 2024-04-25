@@ -192,26 +192,45 @@ Authentication is implemented for the admin portal to ensure secure access to ad
 ## Roadmap
 
 
-Week 1: Setting Up and Basic Implementation
--Setup Project Structure: Initialize a new Node.js project and set up the basic directory structure.
--Install Dependencies: Install required dependencies such as Express.js, Nodemailer, and authentication middleware.
--Basic Express Server: Create a basic Express server with routes for handling static files (images), admin functionalities, and a placeholder route for sending emails.
--Design Mockup: Create mockups for the app's pages (Home, Gallery, Details, Contact, Admin add page,Admin delete page) using Figma
--Implement Home and Gallery Pages: Implement the home page with navigation header, hero image, and about the artist section. Implement the gallery page with navigation header, grid of painting images, and links to details page.
+Week 1: Backend Setup and Frontend Basic Implementation
 
-Week 2:  Admin Portal and Email Functionality
-- Implement login page and authentication mechanism for the admin portal.
+Backend Setup:
+Initialize a new Node.js project.
+Set up the basic directory structure.
+Install dependencies such as Express.js, Nodemailer, and authentication middleware.
+Create a basic Express server.
+Set up routes for handling static files (images), admin functionalities, and a placeholder route for sending emails.
+
+Frontend Basic Implementation:
+Create mockups for the app's pages (Home, Gallery, Details, Contact, Admin add page, Admin delete page) using Figma.
+Implement the home page with navigation header, hero image, and about the artist section.
+Implement the gallery page with navigation header, grid of painting images, and links to details page.
+
+
+Week 2: Admin Portal, Email Functionality, Styling, and Deployment
+
+Admin Portal and Additional Frontend 
+Implementation:
+
+-Implement login page and authentication mechanism for the admin portal.
 -Develop (+Admin Add Painting) and (- Admin Remove Painting) pages for admin functionalities.
--Implement Details and Contact Pages: Implement the details page with navigation header, hero image, painting details section, and footer. Implement the contact page with navigation header, hero image,contact form, and footer.
--Sending Email Functionality: Implement functionality to send emails using Nodemailer when the contact form is submitted.
--Integration Testing: Test the email functionality and ensure that emails are being sent successfully.
--Styling Enhancements: Styling the app's components using SCSS.
+-Implement the details page with navigation header, hero image, painting details section, and footer.
+-Implement the contact page with navigation header, hero image, contact form, and footer.
 
-Week 3: Refactoring, Testing, Deployment, and Launch
-Refactoring and Cleanup: Review the codebase, refactor any messy or redundant code, and ensure code quality.
-Testing: Conduct testing of the app's functionality, ensure the endpoints work correctly.
-Bug Fixes: Address any bugs or issues discovered during testing and make necessary fixes.
-Deployment and Launch: Deploy the app to a hosting platform such as Heroku or AWS. Configure domain name and DNS settings. Announce the launch of the app to the target audience through facebook, instagram and LinkedIn.
+Backend Email Functionality:
+
+-Implement functionality to send emails using Nodemailer when the contact form is submitted.
+-Test the email functionality and ensure that emails are being sent successfully.
+
+Styling Enhancements:
+- Style the app's components using SCSS to enhance the visual appeal.
+- Refactoring, Testing, Deployment, and Launch:
+Review the codebase, refactor any messy or redundant code, and ensure code quality.
+-Conduct testing of the app's functionality, ensuring all endpoints work correctly.
+Deploy the app to a hosting platform such as Heroku or AWS.
+-Configure domain name and DNS settings.
+Announce the launch of the app to the target audience through Facebook, Instagram, and LinkedIn.
+
 
 ## Nice-to-haves
 Living Room page:
