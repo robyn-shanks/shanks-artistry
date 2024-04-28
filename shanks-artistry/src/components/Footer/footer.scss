@@ -1,100 +1,107 @@
+@use "../../../styles/_mixins.scss" as mixins;
+@import "../../../styles/variables.scss";
+
 .footer {
-    background-color: #323232;
-    color: white;
-    padding: 1rem;
-  
-    &__container {
-      // Add container styles here if necessary
-    }
-  
-    &__title {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-  
-      &__contact {
-        display: flex;
-        flex-direction: row;
+  background-color: $background-color;
+  color: $color;
+  padding: $padding;
+
+  &__title {
+    display: $display;
+    flex-direction: $flex-direction-secondary;
+    align-content: center;
+    justify-content: space-between;
+
+    &__contact {
+      @include mixins.tablet {
+        display: $display;
+        flex-direction: $flex-direction-secondary;
         justify-content: space-evenly;
-  
-        &__contact-title {
-          font-size: 1.5rem;
-  
-          @media screen and (min-width: 1279px) {
-            font-size: 2.25rem;
-            line-height: 2.75rem;
-            font-weight: 700;
-            padding-left: 3.125rem;
-          }
-        }
-  
-        &__socials {
-          margin-top: auto;
-          margin-bottom: auto;
-          display: flex;
-          justify-content: space-between;
-  
-          @media screen and (min-width: 1279px) {
-            padding-left: 1.875rem;
-          }
-  
-          &-link {
-            // Add styles for social links if necessary
-          }
+      }
+
+      &__text {
+        font-size: $font-size;
+
+        @include mixins.tablet {
+          font-size: 2.25rem;
+          line-height: 2.75rem;
+          font-weight: $font-weight-600;
+          padding-left: 3.125rem;
         }
       }
-  
-      &__logo {
-        display: flex;
-        justify-content: flex-end;
-  
-        &-image {
-          // Add styles for logo image if necessary
-        }
-      }
-    }
-  
-    &__info {
-      display: flex;
-      flex-direction: column;
-  
-      @media screen and (min-width: 1279px) {
-        flex-direction: row;
+
+      &__socials {
+        margin-top: auto;
+        margin-bottom: auto;
+        display: $display;
         justify-content: space-between;
-        padding-left: 3.125rem;
-        padding-right: 3.125rem;
-      }
-  
-      &__group {
-        &__text {
-          font-size: 0.8125rem;
-          font-weight: 400;
-          line-height: 1.125rem;
-  
-          @media screen and (min-width: 1279px) {
-            font-size: 1.5rem;
-            line-height: 2rem;
-            font-weight: 600;
-          }
-        }
-  
-        &__Agent {
-          font-size: 0.875rem;
-          font-weight: 600;
-          line-height: 2rem;
-  
-          @media screen and (min-width: 1279px) {
-            font-size: 1.5rem;
-            line-height: 2rem;
-            font-weight: 600;
-          }
+
+        @include mixins.tablet {
+          padding-left: 1.875rem;
         }
       }
-    }
-  
-    &__text {
-      // Add styles for footer text if necessary
     }
   }
+
+  &__info {
+    display: $display;
+    flex-direction: $flex-direction;
+
+    @include mixins.tablet {
+      flex-direction: $flex-direction-secondary;
+      justify-content: space-between;
+      padding-left: 3.125rem;
+      padding-right: 3.125rem;
+    }
+
+    &__group {
+      &__Agent {
+        font-size: .875rem;
+        font-weight: $font-weight-600;
+        line-height: 2rem;
+
+        @include mixins.tablet {
+          font-size: $font-size;
+          line-height: 2rem;
+          font-weight: $font-weight-600;
+        }
+      }
+
+      &__text {
+        
+        font-size: .8125rem;
+        font-weight: 400;
+        line-height: 1.125rem;
+      }
+    }
+  }
+
+  &-logo {
+    &__image {
+      @include mixins.tablet {
+        height: 0%;
+        width: 0%;
+      }
+    }
+  }
+}
+
+.navigation__list-item-link.navigation__list-item-link--admin {
+  font-size: $font-size / 2; // Assuming $font-size is the original font size
   
+  text-decoration: none;
+}
+
+.navigation__list-item-link--admin:hover {
+  
+  font-weight: 700; /* Assuming $font-weight-700 is defined in your variables */
+  // border-bottom: 1px solid;
+  // padding-bottom: .40rem;
+  border-color: white;
+  position: relative;
+  text-decoration: none;
+}
+
+.footer__text{
+  margin-top: 1.6rem;
+}

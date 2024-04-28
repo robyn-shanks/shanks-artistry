@@ -1,21 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './footer.scss';
+import instagramIcon from "../../assets/Icons/Icon-instagram.svg";
+import facebookIcon from "../../assets/Icons/Icon-facebook.svg";
 
-const Footer = () => {
+
+
+export default function Footer () {
   return (
+    <>
     <footer className="footer">
       <section className="footer__container">
         <div className="footer__title">
           <div className="footer__contact">
             <h3 className="footer__contact-title">Get in Touch</h3>
             <div className="footer__socials">
-              <a href="https://www.instagram.com/ashanksart/" className="footer__socials-link"><img src="./assets/Icons/Icon-instagram.svg" alt="instagram-image"/></a>
-              <a href="https://www.facebook.com/ashanks2" className="footer__socials-link"><img src="./assets/Icons/Icon-facebook.svg" alt="facebook-image"/></a>
-              <a href="https://www.linkedin.com/in/andrew-shanks-72906888/" className="footer__socials-link"><img src="./assets/Icons/linkedin.png" alt="linkedin-image"/></a>
+              <a href="https://www.instagram.com/ashanksart/" className="footer__socials-link"><img src={instagramIcon} alt="instagram-image"/></a>
+              <a href="https://www.facebook.com/ashanks2" className="footer__socials-link"><img src={facebookIcon} alt="facebook-image"/></a>
+              
             </div>
           </div>
-          <div className="footer__logo">
-            <img className="footer__logo-image" src="assets/Icons/icon-like.svg" alt="logo" />
-          </div>
+          
         </div>
         <div className="footer__info">
           <div className="footer__info-group">
@@ -23,14 +28,17 @@ const Footer = () => {
             <p className="footer__info-text">andyshanks8@gmail.com</p>
           </div>
         </div>
-        <div className="footer__logo">
-          <img className="footer__logo-image" alt="logo-image" src="assets/Icons/icon-like.svg" />
-        </div>
+        <li className="navigation__list-item">
+            <Link className="navigation__list-item-link navigation__list-item-link--admin" to="/admin">
+              Admin
+            </Link>
+          </li>
         <p className="footer__text">Made with love © 2024 All Rights Reserved</p>
       </section>
     </footer>
+    </>
   );
 };
 
-export default Footer;
+
 
