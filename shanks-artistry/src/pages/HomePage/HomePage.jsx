@@ -1,7 +1,6 @@
 import React from 'react';
 import "./HomePage.scss";
 import Andy from "../../assets/Images/andy-mountain.jpeg";
-import Sea from "../../assets/paintings/20230519_085938.jpg";
 import Lodge from "../../assets/paintings/Elfin-Lodge.jpg"
 import Alberta from "../../assets/paintings/Alberta-field.jpg"
 import Stanley from "../../assets/paintings/Stanley.jpg"
@@ -33,7 +32,7 @@ export default function HomePage () {
             
         </p>
         <h2 className="about__title2">
-            {/* <img class= "about-image" src={Sea} alt="hero"/> */}
+            
             <img className= "about-image3" src={Alberta} alt="hero"/>
                 <img className= "about-image3" src={Stanley} alt="hero"/>
         </h2>
