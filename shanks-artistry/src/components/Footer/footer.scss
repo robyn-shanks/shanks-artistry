@@ -6,18 +6,26 @@
   color: $color;
   padding: $padding;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+
   &__title {
-    display: $display;
-    flex-direction: $flex-direction-secondary;
-    align-content: center;
+    width: 100%; /* Ensure title spans full width */
+    max-width: 1200px; /* Limit maximum width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
     justify-content: space-between;
 
     &__contact {
-      @include mixins.tablet {
-        display: $display;
-        flex-direction: $flex-direction-secondary;
-        justify-content: space-evenly;
-      }
+      width: 100%;
+      max-width: 800px; /* Limit maximum width */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center items horizontally */
+      justify-content: space-between;
 
       &__text {
         font-size: $font-size;
@@ -33,7 +41,9 @@
       &__socials {
         margin-top: auto;
         margin-bottom: auto;
-        display: $display;
+        width: 100%;
+        max-width: 600px; /* Limit maximum width */
+        display: flex;
         justify-content: space-between;
 
         @include mixins.tablet {
@@ -44,11 +54,14 @@
   }
 
   &__info {
-    display: $display;
-    flex-direction: $flex-direction;
+    width: 100%;
+    max-width: 1200px; /* Limit maximum width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
 
     @include mixins.tablet {
-      flex-direction: $flex-direction-secondary;
+      flex-direction: row;
       justify-content: space-between;
       padding-left: 3.125rem;
       padding-right: 3.125rem;
@@ -68,7 +81,6 @@
       }
 
       &__text {
-        
         font-size: .8125rem;
         font-weight: 400;
         line-height: 1.125rem;
@@ -87,21 +99,17 @@
 }
 
 .navigation__list-item-link.navigation__list-item-link--admin {
-  font-size: $font-size / 2; // Assuming $font-size is the original font size
-  
+  font-size: $font-size / 2;
   text-decoration: none;
 }
 
 .navigation__list-item-link--admin:hover {
-  
-  font-weight: 700; /* Assuming $font-weight-700 is defined in your variables */
-  // border-bottom: 1px solid;
-  // padding-bottom: .40rem;
+  font-weight: 700;
   border-color: white;
   position: relative;
   text-decoration: none;
 }
 
-.footer__text{
+.footer__text {
   margin-top: 1.6rem;
 }

@@ -1,0 +1,256 @@
+@import "../../../styles/_mixins.scss";
+@import "../../../styles/variables.scss";
+
+
+.hero { 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    &-image {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between; 
+        overflow-x: auto; 
+    }
+
+    &__title{
+        position: absolute;
+        top: 12.5%;
+        left: .625rem;
+        color:$color;
+        font-weight: $font-weight-700;
+        font-size: 4rem;
+        line-height: 2rem; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+        @include tablet {
+            font-size: 3.75;
+            line-height: 4.25rem;
+            font-weight: $font-weight-700;
+            }
+    }  
+
+}
+
+// .shows {
+//     color: $color-secondary;
+//     font-weight: $font-weight-700;
+//     font-size: $font-size;
+//     line-height: 2rem;
+//     padding-left: 1rem;
+//     padding-top: 1.5rem;
+//     margin-bottom: 0;
+// }
+
+// .shows-section {
+//     display: flex;
+//     flex-direction: $flex-direction;
+//     border-bottom: 1px solid #e6e6e6;
+//     padding: $padding;
+// }
+
+// .shows-section:hover {
+//     background-color: #FAFAFA;
+// }
+
+// .shows-section:active {
+//     background-color: #E1E1E1;
+// }
+
+// .shows-section button {
+//     font-weight: $font-weight-600;
+//     margin-top: 1.563rem;
+//     margin-bottom: 1.563rem;
+//     color: $color;
+//     width: 100%;
+//     background-color: $background-color;
+//     line-height: 2.5rem;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+// }
+
+// .shows-section button:hover {
+//     background-color: #000000;
+// }
+
+// .shows-section__text {
+//     display: flex;
+//     flex: 1;
+//     flex-direction: $flex-direction;
+//     color: #AFAFAF;
+//     font-weight: $font-weight-600;
+//     font-size: .875rem;
+//     line-height: 1.375rem;
+//     padding-left: 1rem;
+//     padding-right: 1rem;
+//     margin: $margin;
+// }
+
+// .shows-section__text--date {
+//     color: $color-secondary;
+// }
+
+// .shows-section__text--location {
+//     color: $color-secondary;
+//     font-size: $font-size-secondary;
+//     line-height: 1.375rem;
+//     font-weight: $font-weight-600;
+// }
+
+// @media (min-width: 768px) {
+//     .shows {
+//         font-size: 2.25rem;
+//         line-height: 2.75rem;
+//     }
+
+//     .shows-section {
+//         flex-direction: $flex-direction-secondary;
+//         padding-top: 1.5rem;
+//         padding-bottom: 1.5rem;
+//         padding-right: 1.125rem;
+//         padding-left: 1.125rem;
+//     }
+// }
+
+// // @media (min-width: 1024px) {
+// //     .shows-section {
+// //         margin-left: 15.625rem;
+// //     }
+// // }
+
+
+
+// .shows-section__image {
+//     max-width: 100%; /* Maximum width */
+//     height: auto; /* Maintain aspect ratio */
+//     margin-right: 20px; /* Add some margin for spacing */
+// }
+
+// .shows-section__image img {
+//     width: 500%; /* Ensure image fills its container */
+    
+//     height: auto; /* Maintain aspect ratio */
+//     display: block; /* Ensure image is displayed as a block element */
+//     margin: 0; /* Remove any default margin */
+// }
+
+// @media (max-width: 1282px) {
+//     .shows-section__image {
+//         max-width: 20%; /* Adjust maximum width for all smaller screen sizes */
+//         margin-right: 20px; /* Set fixed margin for all smaller screen sizes */
+//     }
+// }
+
+// @media (max-width: 320px) {
+//     .shows-section__image {
+//         max-width: 100%; /* Adjust maximum width for mobile */
+//         margin-right: 20px; /* Set fixed margin for mobile */
+//     }
+// }
+
+.shows {
+    color: $color-secondary;
+    font-weight: $font-weight-700;
+    font-size: $font-size;
+    line-height: 2rem;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+.shows-section {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e6e6e6;
+    padding: $padding;
+}
+
+.shows-section:hover {
+    background-color: #FAFAFA;
+}
+
+.shows-section:active {
+    background-color: #E1E1E1;
+}
+
+.shows-section button {
+    font-weight: $font-weight-600;
+    margin-top: 1.563rem;
+    margin-bottom: 1.563rem;
+    color: $color;
+    width: 100%;
+    background-color: $background-color;
+    line-height: 2.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.shows-section button:hover {
+    background-color: #000000;
+}
+
+.shows-section__text {
+    display: flex;
+    flex: 1;
+    flex-direction: $flex-direction;
+    color: #AFAFAF;
+    font-weight: $font-weight-600;
+    font-size: .875rem;
+    line-height: 1.375rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: $margin;
+}
+
+.shows-section__text--date {
+    color: $color-secondary;
+}
+
+.shows-section__text--location {
+    color: $color-secondary;
+    font-size: $font-size-secondary;
+    line-height: 1.375rem;
+    font-weight: $font-weight-600;
+}
+
+.shows-section__image {
+    flex-basis: 25%;
+    max-width: 100%; 
+    height: auto; 
+    margin-right: 0px; 
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.shows-section__image img {
+    width: 100%; 
+    height: auto;
+    display: block; 
+    margin: 0; 
+}
+
+.shows-section__image:hover img {
+    transform: scale(1.1); /* Scale the image on hover */
+    filter: brightness(1.2); /* Increase brightness on hover */
+}
+
+@media (max-width: 1282px) {
+    .shows-section__image {
+        max-width: 100%; 
+        margin-right: 20px;
+        order: -1; 
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+@import "../../../styles/_mixins.scss";
+@import "../../../styles/variables.scss";
+
+
+.hero { 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+   
+
+    &-image {
+        display: flex;
+        flex-direction: column; /* Ensure images are displayed in a row */
+        align-items: center; /* Align items horizontally */
+        justify-content: center; /* Distribute space between items */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        background-color: #fffff5;
+    }
+
+    &__title{
+        z-index: 2;
+        position: absolute;
+        top: 12.5%;
+        left: .625rem;
+        color:$color;
+        font-weight: $font-weight-700;
+        font-size: 3.75rem;
+        line-height: 2rem; 
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+        @include tablet {
+            font-size: 3.75;
+            line-height: 4.25rem;
+            font-weight: $font-weight-700;
+            }
+    
+    }  
+}
+
+
+.hero__title1,
+.hero__title2,
+.hero__title3,
+.hero__title4,
+.hero__title5,
+.hero__title6,
+.hero__title7,
+.hero__title8,
+.hero__title9 {
+    color: black; /* Change text color to black */
+    font-size: 1.25rem; /* Set font size */
+    text-align: center; /* Center align the text */
+    border-top: 1px solid black; /* Add a thin solid black border on top */
+    padding-top: 10px; /* Add some padding on top for spacing */
+    margin: 10px 0; /* Add some vertical margin for spacing */
+    
+}
+
+
+.hero__title1:hover,
+.hero__title2:hover,
+.hero__title3:hover,
+.hero__title4:hover,
+.hero__title5:hover,
+.hero__title6:hover,
+.hero__title7:hover,
+.hero__title8:hover,
+.hero__title9:hover {
+    transform: scale(1.1); /* Bulge effect on hover */
+    color: #333; /* Change text color on hover to a color close to black */
+    transition: transform 0.3s ease; /* Add smooth transition for the transform effect */
+    
+}
+
+
+
+.form-container {
+    
+    background-color: #f5f5f5;
+}
+  
+
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  

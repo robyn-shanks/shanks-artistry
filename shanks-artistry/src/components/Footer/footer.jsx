@@ -29,7 +29,7 @@ export default function Footer () {
           </div>
         </div>
         <li className="navigation__list-item">
-            <Link className="navigation__list-item-link navigation__list-item-link--admin" to="/admin">
+            <Link className="navigation__list-item-link navigation__list-item-link--admin" to="/adminlogin">
               Admin
             </Link>
           </li>
