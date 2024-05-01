@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ContactPage.scss'; // Import CSS file for styling
+import './ContactPage.scss'; 
 import Moose from "../../assets/paintings/Alberta-field.jpg";
 
 export default function ContactPage() {
@@ -10,15 +10,58 @@ export default function ContactPage() {
     message: ''
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: '' })); 
   };
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send data to backend)
-    console.log(formData);
+
+    let errors = {};
+    if (!formData.userEmail.trim()) {
+      errors.userEmail = 'Please enter your email';
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.userEmail)) {
+      errors.userEmail = 'Please enter a valid email address';
+    }
+    if (!formData.artistEmail.trim()) {
+      errors.artistEmail = 'Please enter the artist\'s email';
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.artistEmail)) {
+      errors.artistEmail = 'Please enter a valid email address';
+    }
+    if (!formData.subjectHeader.trim()) {
+      errors.subjectHeader = 'Please enter a subject';
+    }
+    if (!formData.message.trim()) {
+      errors.message = 'Please enter a message';
+    }
+
+    // If there are validation errors, set them and return
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors);
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:8080/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        console.log('Email sent successfully');
+      } else {
+        console.error('Error sending email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
   };
 
   return (
@@ -49,7 +92,8 @@ export default function ContactPage() {
             onChange={handleChange}
             required
           />
-
+          {errors.userEmail && <p className="error-message">{errors.userEmail}</p>}
+          
           <label htmlFor="artist-email">Artist's Email:</label>
           <input
             type="email"
@@ -58,8 +102,9 @@ export default function ContactPage() {
             value={formData.artistEmail}
             onChange={handleChange}
             required
-            placeholder="andyshanks8@gmail.com"
+            placeholder=" "
           />
+          {errors.artistEmail && <p className="error-message">{errors.artistEmail}</p>}
 
           <label htmlFor="subject-header">Subject:</label>
           <input
@@ -71,7 +116,7 @@ export default function ContactPage() {
             required
             placeholder="Product Request"
           />
-
+          {errors.subjectHeader && <p className="error-message">{errors.subjectHeader}</p>}
           <label htmlFor="message">Message:</label>
           <textarea
             id="message"
@@ -82,10 +127,11 @@ export default function ContactPage() {
             required
             placeholder="Your Name, Title of Painting, Product, Size?"
           />
-
+          {errors.message && <p className="error-message">{errors.message}</p>}
           <button type="submit">Send</button>
         </form>
       </div>
     </>
   );
 }
+
