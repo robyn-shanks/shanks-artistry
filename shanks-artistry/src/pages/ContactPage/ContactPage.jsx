@@ -18,7 +18,6 @@ export default function ContactPage() {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: '' })); 
   };
   
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -40,14 +39,14 @@ export default function ContactPage() {
       errors.message = 'Please enter a message';
     }
 
-    // If there are validation errors, set them and return
+
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:8080/contact', {
+      const response = await fetch('http://localhost:8080/contact/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
