@@ -9,24 +9,22 @@ const AddPaintingPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add code here to submit the painting details (title, size, price, image) to your backend
-    // You can use fetch, Axios, or any other library to send a POST request to your server
-    // Example:
+    
     const formData = new FormData();
     formData.append('title', title);
     formData.append('size', size);
     formData.append('price', price);
     formData.append('image', image);
 
-    fetch('/api/addPainting', {
+    fetch('/api/adminadd', {
       method: 'POST',
       body: formData
     })
     .then(response => {
-      // Handle response (e.g., show success message, clear form)
+      console.log('success');
     })
     .catch(error => {
-      // Handle error (e.g., show error message)
+      console.log('Error')
     });
   };
 

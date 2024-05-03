@@ -38,11 +38,11 @@ const ProductsPage = () => {
               <img src={painting.image} alt={painting.title} />
             </div>
           )}
-          <div className="shows-section__text">
+          {/* <div className="shows-section__text">
             <h3 className="shows-section__text--location">
               {painting ? painting.title : ''}
             </h3>
-          </div>
+          </div> */}
           {/* <div className="shows-section__text">
             <h3 className="shows-section__text--location">
               ORIGINAL: {painting ? (painting.available ? 'Available' : 'Not Available') : ''}

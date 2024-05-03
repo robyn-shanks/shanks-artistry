@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import "./AdminLoginPage.scss";
-
 
 const AdminLoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -14,9 +16,22 @@ const AdminLoginPage = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add code here to authenticate the admin
+    try {
+      
+      const response = await axios.post('http://localhost:8080/admin/admin/adminlogin', {
+        email: email,
+        password: password
+      });
+
+      
+      console.log('Login successful:', response.data);
+      navigate('/adminadd'); 
+    } catch (error) {
+      
+      console.error('Login failed:', error); 
+    }
   };
 
   return (
@@ -48,3 +63,4 @@ const AdminLoginPage = () => {
 };
 
 export default AdminLoginPage;
+
