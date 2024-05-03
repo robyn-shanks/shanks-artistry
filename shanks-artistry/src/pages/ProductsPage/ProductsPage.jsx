@@ -40,100 +40,104 @@ const ProductsPage = () => {
           )}
           <div className="shows-section__text">
             <h3 className="shows-section__text--location">
-              Title: {painting ? painting.title : ''}
+              {painting ? painting.title : ''}
             </h3>
           </div>
-          <div className="shows-section__text">
-            {/* <h3 className="shows-section__text--location">
+          {/* <div className="shows-section__text">
+            <h3 className="shows-section__text--location">
               ORIGINAL: {painting ? (painting.available ? 'Available' : 'Not Available') : ''}
-            </h3> */}
-          </div>
-          <div className="shows-section__text">
-  <h3 className="shows-section__text--date">Products:</h3>
-  <ul>
-    <li>Magnet</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li>Prints</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li>Calendar</li>
-    
-    <li>Canvas Print</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li>Cards</li>
-    <li>Coasters</li>
-    <li></li>
-    <li>Puzzle</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li>Tote Bags</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li>Notebook</li>
-  </ul>
+            </h3>
+          </div> */}
+          <div class="shows-section__container">
+  <div class="shows-section__text">
+    <h3 className="shows-section__text--date">Products</h3>
+    <ul className="products-list">
+      <li className="product-item">Magnet</li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item">Prints</li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item">Calendar</li>
+      <li className="product-item">Canvas Print</li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item">Cards</li>
+      <li className="product-item">Coasters</li>
+      <li className="product-item"></li>
+      <li className="product-item">Puzzle</li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item">Tote Bags</li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item"></li>
+      <li className="product-item">Notebook</li>
+    </ul>
+  </div>
+
+  <div class="shows-section__text">
+    <h3 className="shows-section__text--location">Size</h3>
+    <ul className="size-list">
+      <li className="size-item">2x3</li>
+      <li className="size-item">3x2</li>
+      <li className="size-item">3x4</li>
+      <li className="size-item">4x3</li>
+      <li className="size-item">16x20(s)</li>
+      <li className="size-item">18x24(m)</li>
+      <li className="size-item">22x28(l)</li>
+      <li className="size-item">17x11</li>
+      <li className="size-item">8x12(s)</li>
+      <li className="size-item">12x16(m)</li>
+      <li className="size-item">16x24(l)</li>
+      <li className="size-item">5.5x4</li>
+      <li className="size-item">4x4</li>
+      <li className="size-item">48 pcs</li>
+      <li className="size-item">500 pcs</li>
+      <li className="size-item">1000 pcs</li>
+      <li className="size-item">W 13.4 H-13.4</li>
+      <li className="size-item">W 15 H-18.5</li>
+      <li className="size-item">5.5x8.5(80pgs)</li>
+    </ul>
+  </div>
+
+  <div class="shows-section__text">
+    <h3 className="shows-section__text--location">Price</h3>
+    <ul className="price-list">
+      <li className="price-item">$5</li>
+      <li className="price-item"></li>
+      <li className="price-item"></li>
+      <li className="price-item">$7</li>
+      <li className="price-item"></li>
+      <li className="price-item"></li>
+      <li className="price-item">$20</li>
+      <li className="price-item">$27</li>
+      <li className="price-item">$35</li>
+      <li className="price-item">$30</li>
+      <li className="price-item">$25</li>
+      <li className="price-item">$35</li>
+      <li className="price-item">$55</li>
+      <li className="price-item">$4.00</li>
+      <li className="price-item">$30/4</li>
+      <li className="price-item">$30</li>
+      <li className="price-item">$50</li>
+      <li className="price-item">$70</li>
+      <li className="price-item">$20</li>
+      <li className="price-item">$24</li>
+      <li className="price-item">$20</li>
+    </ul>
+  </div>
 </div>
-<div className="shows-section__text">
-  <h3 className="shows-section__text--location">Size:</h3>
-  <ul>
-    <li>2x3</li>
-    <li>3x2</li>
-    <li>3x4</li>
-    <li>4x3</li>
-    <li>16x20(s)</li>
-    <li>18x24(m)</li>
-    <li>22x28(l)</li>
-    <li>17x11</li>
-    <li>8x12(s)</li>
-    <li>12x16(m)</li>
-    <li>16x24(l)</li>
-    <li>5.5x4</li>
-    <li>4x4</li>
-    <li>48 pcs</li>
-    <li>500 pcs</li>
-    <li>1000 pcs</li>
-    <li>W 13.4 H-13.4</li>
-    <li>W 15 H-18.5</li>
-    <li>5.5x8.5(80pgs)</li>
-  </ul>
-</div>
-<div className="shows-section__text">
-  <h3 className="shows-section__text--location">Price:</h3>
-  <ul>
-    <li>$5</li>
-    <li></li>
-    <li></li>
-    <li>$7</li>
-    <li></li>
-    <li></li>
-    <li>$20</li>
-    <li>$27</li>
-    <li>$35</li>
-    <li>$30</li>
-    <li>$25</li>
-    <li>$35</li>
-    <li>$55</li>
-    <li>$4.00</li>
-    <li>$30/4</li>
-    <li>$30</li>
-    <li>$50</li>
-    <li>$70</li>
-    <li>$20</li>
-    <li>$24</li>
-    <li>$20</li>
-  </ul>
-</div>
+
 <Link to="/contact" className="buy-tickets-button">CONTACT ARTIST</Link>
 
         </div>
