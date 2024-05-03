@@ -9,13 +9,14 @@
     display: $display; 
     flex-direction: $flex-direction;
 
-    &__image{
+    &__image {
         width: 100%; /* Ensure the image fills the container horizontally */
-        height: 100%; /* Ensure the image fills the container vertically */
+        max-height: 75%; /* Ensure the image fills the container vertically */
         object-fit: cover; /* Maintain aspect ratio and cover the entire container */
         display: $display;
         flex-direction: $flex-direction;
         margin: 0 1.25rem;
+        position: relative; /* Make the container relative to position the details */
 
         &--item {
             position: relative;
@@ -35,20 +36,26 @@
 
             .painting-details {
                 position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
+                top: 0;
+                right: 0; /* Position details on the right-hand side */
                 padding: 1rem;
-                background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+                background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
                 color: white; /* Text color */
                 font-size: 0.8rem;
-                text-align: center;
+                text-align: left; /* Align text to the left */
                 transition: opacity 0.3s ease;
                 opacity: 0; /* Initially hidden */
+                display: flex; /* Display details in a column */
+                flex-direction: column; /* Display details in a column */
+                align-items: flex-start; /* Align items to the start of the column */
 
-                &:hover {
-                    opacity: 1; /* Show details on hover */
+                p {
+                    margin: 0; /* Remove default margin */
                 }
+            }
+
+            &:hover .painting-details {
+                opacity: 1; /* Show details on hover */
             }
         }
 
@@ -57,12 +64,10 @@
             flex-wrap: wrap;
             justify-content: space-evenly;
             align-content: space-evenly;
-        }
-
-        
+        }   
     }
 
-    &__title{
+    &__title {
         color: $color-secondary;
         font-weight: $font-weight-700;
         font-size: $font-size;
@@ -72,7 +77,7 @@
             font-size: 2.25rem;
             line-height: 2.75rem;
             font-weight: $font-weight-700;
-          }
+        }
     }
 
     &__image--item {
@@ -85,11 +90,15 @@
         margin-top: $margin;
         margin-bottom: $margin;
 
-        @include tablet{
+        @include tablet {
             width: 30%;
         }
     }  
 }
+
+
+
+
 
 
 

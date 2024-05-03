@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import axios from 'axios';
+
 import Footer from '../src/components/Footer/footer.jsx';
 import Header from '../src/components/Header/header.jsx';
 import HomePage from '../src/pages/HomePage/HomePage.jsx';
@@ -11,25 +13,34 @@ import AdminLoginPage from '../src/pages/AdminLoginPage/AdminLoginPage.jsx';
 import AdminAddPage from '../src/pages/AdminAddPage/AdminAddPage.jsx';
 import AdminRemovePage from '../src/pages/AdminRemovePage/AdminRemovePage.jsx';
 
-
 export default function App() {
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/data') 
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
         <Header/>
         <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/gallery" element={<GalleryPage/>} />
-        <Route path="/products" element={<ProductsPage/>} />
-        <Route path="/contact" element={<ContactPage/>} />
-        <Route path="/adminlogin" element={<AdminLoginPage/>} />
-        <Route path="/adminadd" element={<AdminAddPage/>} />
-        <Route path="/adminremove" element={<AdminRemovePage/>} />
-        
+          <Route path="/" element={<HomePage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/gallery/:id" element={<ProductsPage />} /> {/* Route for individual painting */}
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/adminlogin" element={<AdminLoginPage />} />
+          <Route path="/adminadd" element={<AdminAddPage />} />
+          <Route path="/adminremove" element={<AdminRemovePage />} />
         </Routes>
         <Footer />
       </div>
     </BrowserRouter>
   );
 }
-

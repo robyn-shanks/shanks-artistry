@@ -12,7 +12,8 @@
         flex-direction: row; 
         align-items: center; 
         justify-content: space-between; 
-        overflow-x: auto; 
+        overflow-x: auto;
+        
     }
 
     &__title{
@@ -33,6 +34,190 @@
     }  
 
 }
+
+
+.shows {
+    color: $color-secondary;
+    font-weight: $font-weight-700;
+    font-size: $font-size;
+    line-height: 2rem;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+.shows-section {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e6e6e6;
+    padding: $padding;
+}
+
+.shows-section:hover {
+    background-color: #FAFAFA;
+}
+
+.shows-section:active {
+    background-color: #E1E1E1;
+}
+
+.buy-tickets-button{
+    font-weight: 300;
+    margin-top: 1.563rem;
+    margin-bottom: 1.563rem;
+    color: $color;
+    width: 100%;
+    background-color: $background-color;
+    line-height: 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; 
+    display: inline-block; 
+    text-align: center; 
+}
+
+.buy-tickets-button:hover {
+    background-color: #000000;
+}
+
+.shows-section__text {
+    display: flex;
+    flex: 1;
+    flex-direction: $flex-direction;
+    color: #AFAFAF;
+    font-weight: $font-weight-600;
+    font-size: .875rem;
+    line-height: 1.375rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: $margin;
+}
+
+.shows-section__text--date {
+    color: $color-secondary;
+    font-size: 1.2rem; // Increase font size for better visibility
+    line-height: 1.5; // Adjust line height for better spacing
+    font-weight: bold; // Make the text bold for emphasis
+    margin-bottom: 1rem; // Add more bottom margin for spacing
+    text-transform: uppercase; // Capitalize and transform text to uppercase
+    border-bottom: 2px solid $color-secondary; // Add a thicker underline effect
+    padding-bottom: 0.5rem; // Adjust padding for better spacing
+    transition: color 0.3s ease; // Add transition effect for color change
+}
+
+.shows-section__text--date:hover {
+    color: grey;
+}
+
+
+.shows-section__text--location {
+    color: $color-secondary;
+    font-size: 1.2rem; // Increase font size for better visibility
+    line-height: 1.5; // Adjust line height for better spacing
+    font-weight: bold; // Make the text bold for emphasis
+    margin-bottom: 1rem; // Add more bottom margin for spacing
+    text-transform: uppercase; // Capitalize and transform text to uppercase
+    border-bottom: 2px solid $color-secondary; // Add a thicker underline effect
+    padding-bottom: 0.5rem; // Adjust padding for better spacing
+    transition: color 0.3s ease; // Add transition effect for color change
+}
+
+.shows-section__text--location:hover {
+    color: grey;
+}
+
+
+
+.shows-section__image {
+    flex-basis: 75%; // Set it to 50% to make it twice as big
+    max-width: 100%; 
+    height: auto; 
+    margin-right: 0px; 
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.shows-section__image img {
+    width: 100%; 
+    height: auto;
+    display: block; 
+    margin: 0; 
+}
+
+.shows-section__image:hover img {
+    transform: scale(1.1); /* Scale the image on hover */
+    filter: brightness(1.2); /* Increase brightness on hover */
+}
+
+@media (max-width: 1282px) {
+    .shows-section__image {
+        max-width: 100%; 
+        margin-right: 20px;
+        order: -1; 
+    }
+}
+
+
+
+
+.buy-tickets-button{
+    font-weight: 400;
+    margin-top: 1.563rem;
+    margin-bottom: 1.563rem;
+    color: $color;
+    width: 100%;
+    background-color: $background-color;
+    line-height: 2.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline */
+    display: inline-block; /* Ensure button width is based on content */
+    text-align: center; /* Center text */
+}
+
+/* Add this CSS code */
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  /* Add bold lines on hover */
+  li:hover::before,
+  li:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: black;
+    transition: all 0.3s ease;
+  }
+  
+  /* Bold line on the left */
+  li:hover::before {
+    left: 0;
+  }
+  
+  /* Bold line on the right */
+  li:hover::after {
+    right: 0;
+  }
+  
+  /* Darken and grow on hover */
+  li:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
+
 
 // .shows {
 //     color: $color-secondary;
@@ -150,107 +335,3 @@
 //         margin-right: 20px; /* Set fixed margin for mobile */
 //     }
 // }
-
-.shows {
-    color: $color-secondary;
-    font-weight: $font-weight-700;
-    font-size: $font-size;
-    line-height: 2rem;
-    padding-left: 1rem;
-    padding-top: 1.5rem;
-    margin-bottom: 0;
-}
-
-.shows-section {
-    display: flex;
-    flex-wrap: wrap;
-    border-bottom: 1px solid #e6e6e6;
-    padding: $padding;
-}
-
-.shows-section:hover {
-    background-color: #FAFAFA;
-}
-
-.shows-section:active {
-    background-color: #E1E1E1;
-}
-
-.shows-section button {
-    font-weight: $font-weight-600;
-    margin-top: 1.563rem;
-    margin-bottom: 1.563rem;
-    color: $color;
-    width: 100%;
-    background-color: $background-color;
-    line-height: 2.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.shows-section button:hover {
-    background-color: #000000;
-}
-
-.shows-section__text {
-    display: flex;
-    flex: 1;
-    flex-direction: $flex-direction;
-    color: #AFAFAF;
-    font-weight: $font-weight-600;
-    font-size: .875rem;
-    line-height: 1.375rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: $margin;
-}
-
-.shows-section__text--date {
-    color: $color-secondary;
-}
-
-.shows-section__text--location {
-    color: $color-secondary;
-    font-size: $font-size-secondary;
-    line-height: 1.375rem;
-    font-weight: $font-weight-600;
-}
-
-.shows-section__image {
-    flex-basis: 25%;
-    max-width: 100%; 
-    height: auto; 
-    margin-right: 0px; 
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-
-.shows-section__image img {
-    width: 100%; 
-    height: auto;
-    display: block; 
-    margin: 0; 
-}
-
-.shows-section__image:hover img {
-    transform: scale(1.1); /* Scale the image on hover */
-    filter: brightness(1.2); /* Increase brightness on hover */
-}
-
-@media (max-width: 1282px) {
-    .shows-section__image {
-        max-width: 100%; 
-        margin-right: 20px;
-        order: -1; 
-    }
-}
-
-
-
-
-
-
-
-
-
