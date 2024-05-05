@@ -20,14 +20,14 @@ const AdminLoginPage = () => {
     e.preventDefault();
     try {
       
-      const response = await axios.post('http://localhost:8080/admin/admin/adminlogin', {
+      const response = await axios.post('http://localhost:8080/admin/adminlogin', {
         email: email,
         password: password
       });
 
       
       console.log('Login successful:', response.data);
-      navigate('/adminadd'); 
+      navigate('/admin'); 
     } catch (error) {
       
       console.error('Login failed:', error); 
