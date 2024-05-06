@@ -20,6 +20,7 @@ export default function ContactPage() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(e.target)
 
     let errors = {};
     if (!formData.userEmail.trim()) {
@@ -27,23 +28,21 @@ export default function ContactPage() {
     } else if (!/^\S+@\S+\.\S+$/.test(formData.userEmail)) {
       errors.userEmail = 'Please enter a valid email address';
     }
-    if (!formData.artistEmail.trim()) {
-      errors.artistEmail = 'Please enter the artist\'s email';
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.artistEmail)) {
-      errors.artistEmail = 'Please enter a valid email address';
-    }
     if (!formData.subjectHeader.trim()) {
       errors.subjectHeader = 'Please enter a subject';
     }
     if (!formData.message.trim()) {
       errors.message = 'Please enter a message';
     }
-
+    console.log("if statements passed")
+    console.log(errors)
 
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
-      return;
+      return console.log("Error list not empty");
     }
+
+    console.log(formData)
 
     try {
       const response = await fetch('http://localhost:8080/contact/', {
