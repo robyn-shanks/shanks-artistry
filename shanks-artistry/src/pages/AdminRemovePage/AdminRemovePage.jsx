@@ -1,12 +1,61 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import './AdminRemovePage.scss'; // Import your CSS file for styling
+import DeleteModal from "../../components/DeleteModal/DeleteModal";
+import axios from "axios";
 
-const RemovePaintingPage = () => {
+
+ 
+
+
+export default function RemovePaintingPage () {
   const [title, setTitle] = useState('');
+  const [paintings,setPaintings] = useState([]);
+
+   // for delete
+   const [showDeleteModal, setShowDeleteModal] = useState(false);
+   const [deleteModalItem, setDeleteModalItem] = useState({});
+   const [refresh, setRefresh] = useState(0);
+
+
+   useEffect(() => {
+    fetchPaintings();
+  }, []);
+
+  const fetchPaintings = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/data');
+      setPaintings(response.data); // Update paintings state with fetched data
+    } catch (error) {
+      console.error("Error fetching paintings: ", error);
+    }
+  };
+
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
+
+
+   // for delete modal
+   const openDeleteModal = (painting) => {
+    setDeleteModalItem(painting);
+    setShowDeleteModal(true);
+  };
+
+  const handleDelete = async () => {
+    setShowDeleteModal(false);
+
+    try {
+      await axios.delete(
+        `http://localhost:8080/admin/remove/${deleteModalItem.id}`
+      );
+      setRefresh(refresh + 1);
+    } catch (error) {
+      console.error("Error deleting data: ", error);
+    }
+  };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +63,7 @@ const RemovePaintingPage = () => {
   };
 
   return (
+  <>
     <div className="remove-painting-container">
       <h2>Remove (Sold) Painting from Inventory</h2>
       <form onSubmit={handleSubmit} className="remove-painting-form">
@@ -25,17 +75,34 @@ const RemovePaintingPage = () => {
             required
           >
             <option value="">Select Title</option>
-            {/* Add options dynamically based on available paintings */}
-            <option value="painting1">Painting 1</option>
-            <option value="painting2">Painting 2</option>
-            {/* Add more options as needed */}
+            {paintings.map((painting) => {
+              return(
+              <option key={painting.id} value={painting.title}>
+                {painting.title}
+              </option>
+              )
+            })}
           </select>
         </div>
-        <button type="submit" className="submit-btn">Submit</button>
+        <button type="submit"
+          className="submit-btn"
+          onClick={() => openDeleteModal(paintings.find(p => p.title === title))}>
+            Submit
+        </button>
         <button type="button" className="clear-btn" onClick={() => setTitle('')}>Clear Form</button>
       </form>
     </div>
+    {showDeleteModal && (
+      <DeleteModal
+        paintingName={deleteModalItem.title}
+        onCancel={() => {
+          setShowDeleteModal(false);
+        }}
+        onDelete={handleDelete}
+      />
+    )}
+  </>
   );
 };
 
-export default RemovePaintingPage;
+

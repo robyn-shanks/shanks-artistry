@@ -3,9 +3,7 @@ import "./DeleteModal.scss";
 import closeSvg from "../../assets/Icons/close-24px.svg";
 
 export default function DeleteModal({
-  itemName,
-  title,
-  listType,
+  paintingName,
   onCancel,
   onDelete,
 }) {
@@ -21,11 +19,11 @@ export default function DeleteModal({
         </button>
         <div>
           <h1 className="delete-modal__header">
-            Delete {itemName} {title}?
+            Delete {paintingName}?
           </h1>
           <p className="delete-modal__content p1">
-            Please confirm that you’d like to delete {itemName} from the{" "}
-            {listType} list. You won’t be able to undo this action.
+            Please confirm that you’d like to delete {paintingName} from the painting
+            list. You won’t be able to undo this action.
           </p>
         </div>
 

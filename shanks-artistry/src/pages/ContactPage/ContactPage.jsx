@@ -93,18 +93,6 @@ export default function ContactPage() {
           />
           {errors.userEmail && <p className="error-message">{errors.userEmail}</p>}
           
-          <label htmlFor="artist-email">Artist's Email:</label>
-          <input
-            type="email"
-            id="artist-email"
-            name="artistEmail"
-            value={formData.artistEmail}
-            onChange={handleChange}
-            required
-            placeholder=" "
-          />
-          {errors.artistEmail && <p className="error-message">{errors.artistEmail}</p>}
-
           <label htmlFor="subject-header">Subject:</label>
           <input
             type="text"
