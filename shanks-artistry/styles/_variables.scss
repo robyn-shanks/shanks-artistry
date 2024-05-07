@@ -1,0 +1,115 @@
+$background-color: #323232;
+$font-family: 'avenir', sans-serif;
+$padding: 1rem;
+$margin: 1rem;
+$font-size: 1.5rem;
+$font-size-secondary: 1rem;
+$color: white;
+$color-secondary: black;
+$font-weight-700: 700;
+$font-weight-600: 600;
+$position: relative;
+$position-secondary: absolute;
+$flex-direction: column;
+$flex-direction-secondary: row;
+$display: flex;
+
+
+// breakpoint
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// primary colors
+$instock-black: #13182c;
+$instock-indigo: #2e66e5;
+$white: #ffffff;
+
+//secondary colors
+$slate: #5c667e;
+$cloud: #bdc5d5;
+
+// background colors
+$graphite: #232940;
+$light-grey: #f7fbf9;
+
+//supporting colors
+$green: #158463;
+$red: #c94515;
+
+//margins & paddings
+$margin: 16px;
+$margin-between: 24px;
+$margin-between-header: 4px;
+$margin-between-section: 16px;
+$tablet-margin: 32px;
+$desktop-margin: 112px;
+
+//mobile button
+$mobile-button-height: 36px;
+$mobile-button-width: 100%;
+$mobile-button-padding: 16px;
+$mobile-button-radius: 20px;
+$mobile-text-link: 4px;
+
+//destops & tablets button
+$desktop-button-height: 38px;
+$desktop-button-width: 100%;
+$desktop-button-padding: 16px;
+$desktop-button-radius: 20px;
+$desktop-text-link: 4px;
+
+//mobile form
+$mobile-form-height: 36px;
+$mobile-form-width: 100%;
+$mobile-form-padding: 16px;
+$mobile-form-radius: 20px;
+$mobile-form-space: 4px;
+
+//desktop & tablets form
+$desktop-form-height: 38px;
+$desktop-form-width: 100%;
+$desktop-form-padding: 16px;
+$desktop-form-radius: 20px;
+$desktop-form-space: 4px;
+
+//radio button
+$radio-button-space-group: 4px;
+$radio-button-space-text: 8px;
+
+//tags
+$tags-red: #C94515;
+$tags-green: #158463;
+$tags-opacity: 7%;
+$tags-radius: 20px;
+
+//mobile tags
+$mobile-tags-height: 24px;
+$mobile-tags-padding: 8px;
+$mobile-tags-radius: 20px;
+
+//dividers
+$dividers-height: 0.5px;
+
+
+@mixin mobile {
+    @media screen and (min-width: $mobile-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+  }
