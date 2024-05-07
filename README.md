@@ -1,5 +1,48 @@
 # Shanks - Artistry
 
+## Installation
+
+- clone shanks-artistry (client) github repo and shanks-server (server) github repo onto local machine
+- Read package.json for needed dependencies for both client and server
+
+Client side:
+"dependencies": 
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.8",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "node-sass": "^7.0.3",
+    "react": "^18.2.0",
+    "react-auth-kit": "^3.1.3",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+
+Server Side: 
+"dependencies": 
+    "axios": "^1.6.8",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.7",
+    "node-mailjet": "6.0.5",
+    "nodemailer": "^6.9.13",
+    "react-auth-kit": "^3.1.3"
+
+- AdminLogin Page temporary login credentials 
+    username( test@test.com) password (password)
+- Contact Page: Email will be sent to my personal account, I will forward back my received email.
+- to see dynamic data on the products page, an image must be selected from the gallery.
+
 ## Overview
 
 What is your app? Brief description in a couple of sentences.
@@ -21,9 +64,9 @@ The demographic would be:
  -people local to Vancouver or who have an appreciation for Vancouver's natural beauty ( a lot of the art is of nature in and around Vancouver)
  -other artists
  -users of Instagram/facebook who click on this linked website
- 
+
  How: users can navigate to different pages through the links on the header, read up on the artist, view images and learn more about the paintings by clicking on them in the gallery section. They can choose the specific image by title, choose wether they would like to order an original or print and if a print, in what size, then email the artist with this information and arrange any further paymeny/shipping details directly with the local artist.
- 
+
 
 ### Features
 
@@ -235,6 +278,9 @@ Announce the launch of the app to the target audience through Facebook, Instagra
 ## Nice-to-haves
 Living Room page:
 - If I have time I would like to build an additional page that has a large background image of a living room, soft-jazz music that starts when you load the page, and the painting that was clicked in the gallery page on the wall of the living room. There would also be a side bar of all the images that could be clicked on to replace the initial painting in the living room.
+- this would allow users to view what the painting may look like in their living room.
+- this would create more user interaction with the site.
+- there would be a clickable navigation to go to the specific paintings information on the details page so that the user could email the artist and request an order.
 - this would allow users to view what the painting may look like in their living room.
 - this would create more user interaction with the site.
 - there would be a clickable navigation to go to the specific paintings information on the details page so that the user could email the artist and request an order.
