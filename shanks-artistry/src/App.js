@@ -34,7 +34,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/gallery/:id" element={<ProductsPage />} /> {/* Route for individual painting */}
+          <Route path="/gallery/:id" element={<ProductsPage />} /> 
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin" element={<AdminPage />} />

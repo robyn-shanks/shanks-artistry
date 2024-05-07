@@ -1,9 +1,9 @@
-
 import Puzzle from "../../assets/paintings/Puzzle.jpg";
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import "./ProductsPage.scss";
+
 
 const ProductsPage = () => {
   const { id } = useParams();
@@ -27,7 +27,8 @@ const ProductsPage = () => {
     <>
       <div className="hero">
         <div className="hero-image">
-          <img className="about-image" src={Puzzle} alt="hero" />
+          <img className="about-image1" src={Puzzle} alt="hero" />
+          
           <h1 className="hero__title">Product Details</h1>
         </div>
       </div>
@@ -38,16 +39,7 @@ const ProductsPage = () => {
               <img src={painting.image} alt={painting.title} />
             </div>
           )}
-          {/* <div className="shows-section__text">
-            <h3 className="shows-section__text--location">
-              {painting ? painting.title : ''}
-            </h3>
-          </div> */}
-          {/* <div className="shows-section__text">
-            <h3 className="shows-section__text--location">
-              ORIGINAL: {painting ? (painting.available ? 'Available' : 'Not Available') : ''}
-            </h3>
-          </div> */}
+          
           <div class="shows-section__container">
   <div class="shows-section__text">
     <h3 className="shows-section__text--date">Products</h3>
@@ -138,7 +130,7 @@ const ProductsPage = () => {
   </div>
 </div>
 
-<Link to="/contact" className="buy-tickets-button">CONTACT ARTIST</Link>
+<Link to="/contact" className="buy-tickets-button">Contact Artist</Link>
 
         </div>
       </div>

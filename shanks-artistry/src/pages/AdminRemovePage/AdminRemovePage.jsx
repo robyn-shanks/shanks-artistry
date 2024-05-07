@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react';
-import './AdminRemovePage.scss'; // Import your CSS file for styling
+import './AdminRemovePage.scss'; 
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import axios from "axios";
 
@@ -24,7 +24,7 @@ export default function RemovePaintingPage () {
   const fetchPaintings = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/data');
-      setPaintings(response.data); // Update paintings state with fetched data
+      setPaintings(response.data); 
     } catch (error) {
       console.error("Error fetching paintings: ", error);
     }
@@ -59,7 +59,7 @@ export default function RemovePaintingPage () {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add code here to remove the original painting from the inventory
+    
   };
 
   return (

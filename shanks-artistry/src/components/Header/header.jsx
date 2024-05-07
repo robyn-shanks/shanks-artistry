@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.scss';
-import likeIcon from '../../assets/Icons/icon-like.svg';
+import logoIcon from '../../assets/Images/andy.jpg';
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
       <nav className="navigation">
         <div className="navigation__logo">
           <Link to="/" className="navigation__logo-link">
-            <img className="navigation__logo-image" src={likeIcon} alt="logo-image" />
+            <img className="navigation__logo-image" src={logoIcon} alt="logo-image" />
           </Link>
         </div>
         <ul className="navigation__list">

@@ -18,13 +18,18 @@ const AddPaintingPage = () => {
     formData.append('size', size);
     formData.append('price', price);
     formData.append('available', available.toLowerCase() === 'yes' ? 1 : 0);
-    formData.append('image', image);
+    formData.append('imageFile', image);
+    formData.append('image', Array.from(formData.entries())[4][1].name)
     console.log(Array.from(formData.entries()));
 
     const data = Object.fromEntries(formData);
     console.log(data);
 
-    const response = await axios.post('http://localhost:8080/admin/add/', data);
+    const response = await axios.post('http://localhost:8080/admin/add/', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
     try {
       alert("Successfully added a new painting");
     } catch (err) {
@@ -34,17 +39,6 @@ const AddPaintingPage = () => {
       }
       alert("Something went wrong.\n" + error);
     }
-
-    // fetch('http://localhost:8080/admin/add/', {
-    //   method: 'POST',
-    //   body: formData
-    // })
-    // .then(response => {
-    //   console.log('success');
-    // })
-    // .catch(error => {
-    //   console.log('Error')
-    // });
   };
 
   const handleImageChange = (e) => {

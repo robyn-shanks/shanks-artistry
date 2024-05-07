@@ -10,10 +10,10 @@
 
     &-image {
         display: flex;
-        flex-direction: column; /* Ensure images are displayed in a row */
-        align-items: center; /* Align items horizontally */
-        justify-content: center; /* Distribute space between items */
-        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        overflow-x: auto; 
         background-color: #fffff5;
     }
 
@@ -48,12 +48,12 @@
 .hero__title7,
 .hero__title8,
 .hero__title9 {
-    color: black; /* Change text color to black */
-    font-size: 1.25rem; /* Set font size */
-    text-align: center; /* Center align the text */
-    border-top: 1px solid black; /* Add a thin solid black border on top */
-    padding-top: 10px; /* Add some padding on top for spacing */
-    margin: 10px 0; /* Add some vertical margin for spacing */
+    color: black; 
+    font-size: 1.25rem; 
+    text-align: center; 
+    border-top: 1px solid black; 
+    padding-top: 10px; 
+    margin: 10px 0; 
     
 }
 
@@ -67,9 +67,9 @@
 .hero__title7:hover,
 .hero__title8:hover,
 .hero__title9:hover {
-    transform: scale(1.1); /* Bulge effect on hover */
-    color: #333; /* Change text color on hover to a color close to black */
-    transition: transform 0.3s ease; /* Add smooth transition for the transform effect */
+    transform: scale(1.1); 
+    color: #333; 
+    transition: transform 0.3s ease; 
     
 }
 
@@ -132,7 +132,7 @@
   
 
   .error-message {
-    color: #ff6347; // Red color for error messages
+    color: #ff6347; 
     font-size: 0.8rem;
     margin-top: 0.2rem;
   }
