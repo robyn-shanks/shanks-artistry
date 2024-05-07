@@ -1,0 +1,103 @@
+@use "variables" as *;
+
+@mixin mobile {
+  @media screen and (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin page_header {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+
+  @include tablet {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+  }
+}
+
+@mixin subheader {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+}
+
+@mixin labels_links_buttons {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+}
+
+@mixin table_header {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+
+  @include tablet {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+}
+
+@mixin body_large {
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+}
+
+@mixin body_medium {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+}
+
+@mixin body_small {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,61 @@
+@import "../../../styles/_mixins.scss";
+@import "../../../styles/variables.scss";
+
+
+
+.button {
+  @include labels_links_buttons;
+  height: 36px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  position: relative;
+  border-radius: 20px;
+  border-width: 0;
+  padding: 8px 16px;
+
+  @include tablet {
+    height: 38px;
+    width: auto;
+  }
+
+  &--primary {
+    background-color: $instock-indigo;
+    color: $white;
+
+    > img {
+      position: absolute;
+      left: 0.5rem;
+    }
+
+    &:hover {
+      background-color: $graphite;
+      cursor: pointer;
+    }
+  }
+
+  &--secondary {
+    background-color: $white;
+    border: 1px solid $cloud;
+    color: $slate;
+
+    &:hover {
+      background-color: $white;
+      color: $instock-indigo;
+      border: 1px solid $instock-indigo;
+      cursor: pointer;
+    }
+  }
+
+  &--delete {
+    background-color: $red;
+    color: $white;
+
+    &:hover {
+      background-color: $graphite;
+      cursor: pointer;
+    }
+  }
+}

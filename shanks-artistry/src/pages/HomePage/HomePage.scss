@@ -1,0 +1,175 @@
+@import "../../../styles/_mixins.scss";
+@import "../../../styles/variables.scss";
+
+.hero { 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    &-image {
+        display: flex;
+        flex-direction: row; /* Ensure images are displayed in a row */
+        align-items: center; /* Align items horizontally */
+        justify-content: space-between; /* Distribute space between items */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+    }
+
+    &__title{
+        position: absolute;
+        top: 12.5%;
+        left: .625rem;
+        color:$color;
+        font-weight: $font-weight-700;
+        font-size: 2rem;
+        line-height: 2rem; 
+        
+
+        @include tablet {
+            font-size: 3.75;
+            line-height: 4.25rem;
+            font-weight: $font-weight-700;
+            }
+    }  
+}
+
+.about-image {
+    max-width: 100%; /* Ensure images take up the available width */
+    max-height: 100%; /* Ensure images take up the available height */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    flex: 1;
+}
+
+
+
+.about{
+    padding: $padding;
+    max-width: 100%; 
+    height: auto; 
+    background-color: #FAFAFA;
+
+    @include tablet {
+        padding-left: 7.5%;
+        padding-right: 7.5%;
+        padding-top: 3%;
+    }
+
+    &-image2 {
+        // display: flex;
+        // max-width: 60%; /* Adjust the max-width to your desired size */
+        // max-height: 50%; /* Adjust the max-height to your desired size */
+        width: 50%; /* Set width to 100% to stretch across the whole width of the screen */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 10px; /* Adjust the border-radius to your desired value for rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow properties to your desired style */
+    }
+    
+
+
+    &__title1 {
+        display: flex;
+        color: #333333;
+        // color: $color-secondary;
+        // background-color: azure;
+        font-weight: 800;
+        font-size: 2rem;
+        line-height: 2rem;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); /* Adjust the shadow properties to your desired style */
+        
+
+        @include tablet {
+            font-size: 3rem;
+            line-height: 2.75rem;
+            font-weight: $font-weight-700;
+        }
+    }
+
+    &__text1{
+        color: $color-secondary;
+        font-size: .9rem;
+        font-weight: 500;
+        padding-left: .625rem;
+        background-color: floralwhite;
+        text-shadow: .5px .5px 1px rgba(0, 0, 0, 0.5);
+        margin: 3rem;
+
+        @include tablet {
+            font-size: $font-size;
+            line-height: 1.375rem;
+            font-weight: 500;
+          }
+    }
+
+    // &__title2{
+    //     font-weight: $font-weight-700;
+    //     color: $color-secondary;
+    //     font-size: .875rem;
+    //     margin-top: 1rem;
+        
+
+    //     @include tablet {
+    //         font-size: $font-size;
+    //         line-height: 2rem;
+    //         font-weight: $font-weight-600;
+    //       }
+    // }
+
+    &__text{
+        font-size: 1.5rem;
+        @include tablet{
+            display: $display;
+            flex-direction: $flex-direction-secondary;
+            font-size: 2.5rem;
+        }
+
+        &__item{
+        color: $color-secondary;
+        margin-top: 3rem;
+        font-size: 1.10rem;
+        font-weight: 400;
+        padding-left: .625rem; 
+
+        @include tablet {
+            font-size: 1.10rem;
+            line-height: 1.375rem;
+            font-weight: 400;
+        }
+        }
+    }
+}
+
+.about-header{
+    background-color: black;
+}
+
+.about__title2{
+    // position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-image3{
+    max-width: 45vw; /* Adjust the maximum width to make the images smaller */
+    max-height: 100%; /* Adjust the maximum height to make the images smaller */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    flex: 1;
+}
+
+// .video-container {
+//     position: relative;
+//     overflow: hidden;
+//     width: 100%;
+//     max-width: 100%; /* Ensure the video container doesn't exceed the width of its parent */
+//     padding-top: 56.25%; /* 16:9 aspect ratio */
+// }
+
+// .responsive-video {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     max-width: 100%; /* Ensure the video doesn't exceed the width of its parent */
+// }
+
