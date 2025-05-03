@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './AdminAddPage.scss';
+import { api } from '../../api';
 
 const AddPaintingPage = () => {
   const [title, setTitle] = useState('');
@@ -25,7 +25,10 @@ const AddPaintingPage = () => {
     const data = Object.fromEntries(formData);
     console.log(data);
 
-    const response = await axios.post('http://localhost:8080/admin/add/', data, {
+    const url = `${process.env.REACT_APP_BACKEND_URL}/admin/add`;
+    console.log('url', url);
+
+    await api.post(url, data, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

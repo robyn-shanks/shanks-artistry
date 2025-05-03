@@ -8,7 +8,7 @@ export default function GalleryPage() {
     const [hoveredPainting, setHoveredPainting] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8080/gallery')
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/gallery`)
             .then(response => response.json())
             .then(data => {
             

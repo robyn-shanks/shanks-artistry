@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { api } from '../../api';
 import "./AdminLoginPage.scss";
 
 const AdminLoginPage = () => {
@@ -19,14 +19,17 @@ const AdminLoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+
+      console.log(process.env);
       
-      const response = await axios.post('http://localhost:8080/admin/adminlogin', {
+      const response = await api.post(`${process.env.REACT_APP_BACKEND_URL}/admin/adminlogin`, {
         email: email,
         password: password
       });
 
       
       console.log('Login successful:', response.data);
+      localStorage.setItem('token', response.data.token);
       navigate('/admin'); 
     } catch (error) {
       

@@ -1,8 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import './AdminRemovePage.scss'; 
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
-import axios from "axios";
-
+import { api } from '../../api';
 
  
 
@@ -23,7 +22,7 @@ export default function RemovePaintingPage () {
 
   const fetchPaintings = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/data');
+      const response = await api.get('/api/data');
       setPaintings(response.data); 
     } catch (error) {
       console.error("Error fetching paintings: ", error);
@@ -46,9 +45,7 @@ export default function RemovePaintingPage () {
     setShowDeleteModal(false);
 
     try {
-      await axios.delete(
-        `http://localhost:8080/admin/remove/${deleteModalItem.id}`
-      );
+      await api.delete(`/admin/remove/${deleteModalItem.id}`);
       setRefresh(refresh + 1);
     } catch (error) {
       console.error("Error deleting data: ", error);
