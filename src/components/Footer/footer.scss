@@ -1,4 +1,4 @@
-@use "../../../styles/_mixins.scss" as mixins;
+@import "../../../styles/_mixins.scss";
 @import "../../../styles/variables.scss";
 
 .footer {
@@ -30,7 +30,7 @@
       &__text {
         font-size: $font-size;
 
-        @include mixins.tablet {
+        @include tablet {
           font-size: 2.25rem;
           line-height: 2.75rem;
           font-weight: $font-weight-600;
@@ -46,7 +46,7 @@
         display: flex;
         justify-content: space-between;
 
-        @include mixins.tablet {
+        @include tablet {
           padding-left: 1.875rem;
         }
       }
@@ -60,7 +60,7 @@
     flex-direction: column;
     align-items: center; /* Center items horizontally */
 
-    @include mixins.tablet {
+    @include tablet {
       flex-direction: row;
       justify-content: space-between;
       padding-left: 3.125rem;
@@ -73,7 +73,7 @@
         font-weight: $font-weight-600;
         line-height: 2rem;
 
-        @include mixins.tablet {
+        @include tablet {
           font-size: $font-size;
           line-height: 2rem;
           font-weight: $font-weight-600;
@@ -90,7 +90,7 @@
 
   &-logo {
     &__image {
-      @include mixins.tablet {
+      @include tablet {
         height: 0%;
         width: 0%;
       }

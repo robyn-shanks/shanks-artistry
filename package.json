@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^16.5.0",
     "jsonwebtoken": "^9.0.2",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",

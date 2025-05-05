@@ -1,7 +1,7 @@
 import Puzzle from "../../assets/paintings/Puzzle.jpg";
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
+import { api } from '../../api';
 import "./ProductsPage.scss";
 
 
@@ -12,7 +12,7 @@ const ProductsPage = () => {
   useEffect(() => {
     const fetchPainting = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/gallery/${id}`);
+        const response = await api.get(`${process.env.REACT_APP_BACKEND_URL}/gallery/${id}`);
         const paintingData = response.data;
         console.log('Fetched painting data:', paintingData);
         setPainting(paintingData);
